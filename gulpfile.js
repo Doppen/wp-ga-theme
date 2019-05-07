@@ -26,7 +26,7 @@ var options = {
     batch : ['./src/components/']
     }
 
-var dst =       '_dist/';
+var dst =       '_dist/gaTheme';//'_dist/';
 var prebuild =  'react/';
 var fScss=      'src/scss/**/*.scss';
 var fHtml=      'src/**/*.html';
@@ -37,6 +37,7 @@ var fJs=        'src/js/**/*';
 var fJson=      'content/data/**/*.json';
 var fMd=        'content/**/*.md';
 var cssUtil=    'src/css-util/**/*';
+var fWp=        'src/wp/**/*';
 
 var siteJson;
 
@@ -93,7 +94,7 @@ gulp.task('sass', function(){
   return gulp.src('./src/scss/*')
     .pipe(plumber())
     .pipe(sass()) //{outputStyle: 'compressed'}
-    .pipe(gulp.dest(dst+'css'))
+    .pipe(gulp.dest(dst+'/css'))
 });
 
 
@@ -118,12 +119,13 @@ gulp.task('buildFromTemplates', function(done) {
 
 
 gulp.task('copyFiles', function(done) {
-  return gulp.src(['src/extra/**/*'])
-      .pipe(gulp.dest(dst))
 
 
-  return gulp.src(fJs)
-      .pipe(gulp.dest(dst+'js'))
+  // return gulp.src(fJs)
+  //     .pipe(gulp.dest(dst+'js'))
+
+    return gulp.src(fWp)
+        .pipe(gulp.dest(dst))
   done();
 });
 
@@ -140,7 +142,7 @@ gulp.task('build',
 
 
 gulp.task('watch', function () {
-  gulp.watch([fJson, fHtml, fHtmlNot, fScss, fJs, cssUtil, fAssets], gulp.series('build'));
+  gulp.watch([fJson, fHtml, fHtmlNot, fScss, fJs, cssUtil, fAssets,fWp], gulp.series('build'));
 });
 
 
