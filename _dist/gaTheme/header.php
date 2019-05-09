@@ -25,35 +25,39 @@
 	echo str_replace("body.custom-background",".customBackground",$classList);
 
 	?>
+	<link rel="stylesheet" href="https://huc-css-util.netlify.com/css/huc-util-ga.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style-custom.css">
+
+
 
 </head>
 
 <body <?php body_class(); ?>>
 
-	<div class="customBackground">
-		<?php
-		the_custom_logo();
-		if ( is_front_page() && is_home() ) : ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php else : ?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-		<?php
-		endif;
-		?>
+	<div class="hcContentContainer bgColorBrand1 hcMarginBottom5">
+	  <header class=" hcPageHeaderSimple hcBasicSideMargin">
+	    <a href='/dpp-home' class='hcBrand'>
+	      <div class="hcBrandLogo"><?php the_custom_logo(); ?></div>
+	    </a>
+
+			<nav id="site-navigation" class="main-navigation">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+				?>
+			</nav>
+	  </header>
 	</div>
 
 
 
+	<div class="customBackground">
 
-	<nav id="site-navigation" class="main-navigation"  style="background-color: #afc3e0">
-		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gutenbergtheme' ); ?></button>
-		<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-		?>
-	</nav><!-- #site-navigation -->
+	</div>
+
+
 
 
 
