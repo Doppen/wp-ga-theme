@@ -278,3 +278,17 @@ strong {
   .itemDivider {
     display: flex;
     flex-direction: row; } }
+
+.partners {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #d8bfe9;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.partners img {
+  width: 100px;
+  height: auto;
+  margin: 0 1rem 1rem 0; }

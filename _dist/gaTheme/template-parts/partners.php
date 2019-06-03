@@ -1,4 +1,4 @@
-<div class="homepageItems">
+<div class="partners">
   <?php
   wp_reset_postdata();
 
@@ -11,8 +11,11 @@
   if ( have_posts() ) :
     while ( have_posts() ) : the_post();
     if ( has_post_thumbnail() ) {?>
-      <img src="<?php the_post_thumbnail_url('medium') ?>)">
-    <?php } 
+      <a href="<?php echo get_post_meta($post->ID, 'partner_url', true); ?>">
+        <img src="<?php the_post_thumbnail_url('thumb') ?>)">
+      </a>
+
+    <?php }
     endwhile;
   endif;
   ?>

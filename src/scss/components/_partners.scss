@@ -1,0 +1,15 @@
+.partners {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(216, 191, 233);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.partners img{
+  width: 100px;
+  height: auto;
+  margin: 0 1rem 1rem 0;
+}
