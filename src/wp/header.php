@@ -25,43 +25,29 @@
 	echo str_replace("body.custom-background",".customBackground",$classList);
 
 	?>
-	<link rel="stylesheet" href="https://huc-css-util.netlify.com/css/huc-util-ga.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style-custom.css">
-
-
 
 </head>
 
 <body <?php body_class(); ?>>
 
-	<div class="hcContentContainer bgColorBrand1 hcMarginBottom5">
-	  <header class=" hcPageHeaderSimple hcBasicSideMargin">
-	    <a href='/dpp-home' class='hcBrand'>
-	      <div class="hcBrandLogo"><?php the_custom_logo(); ?></div>
-	    </a>
 
-			<nav id="site-navigation" class="main-navigation">
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-					) );
-				?>
-			</nav>
-	  </header>
+
+	<div class="header">
+		<div class="headerLeft">&nbsp;</div>
+		<div class="headerMid"><?php the_custom_logo(); ?></div>
+		<nav class="headerRight top-navigation">
+			<?php
+				$cleanMenu = wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+					'echo' => false,
+				) );
+				echo strip_tags($cleanMenu, "<a>");
+			?>
+		</nav>
 	</div>
-
-
-
-	<div class="customBackground">
-
-	</div>
-
-
-
-
 
 
 
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'gutenbergtheme' ); ?></a>

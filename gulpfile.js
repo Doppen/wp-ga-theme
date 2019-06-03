@@ -50,16 +50,25 @@ gulp.task('loadJson', function(done) {
 
 
 
+// gulp.task('browserSync', function(done) {
+//   browserSync.init({
+//     //proxy: "http://localhost:8888/ga1",
+//     server: {
+//       baseDir: dst
+//     },
+//     browser: ["google chrome"], //, "firefox"
+//   })
+//   done();
+// })
+
 gulp.task('browserSync', function(done) {
-  browserSync.init({
-    //proxy: "http://localhost:8888/wp-huc"
-    server: {
-      baseDir: dst
-    },
-    browser: ["google chrome"], //, "firefox"
-  })
-  done();
-})
+    browserSync.init({
+        proxy: "http://localhost:8888/ga1"
+    });
+    done();
+});
+
+
 
 function reload(done) {
   browserSync.reload();
