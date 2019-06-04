@@ -26,7 +26,7 @@ var options = {
     batch : ['./src/components/']
     }
 
-var dst =       '_dist/gaTheme';//'_dist/';
+var dst =       '_dist/wp-huc-theme';//'_dist/';
 var prebuild =  'react/';
 var fScss=      'src/scss/**/*.scss';
 var fHtml=      'src/**/*.html';
@@ -63,7 +63,7 @@ gulp.task('loadJson', function(done) {
 
 gulp.task('browserSync', function(done) {
     browserSync.init({
-        proxy: "http://localhost:8888/ga1"
+        proxy: "http://localhost:8888/wp-default"
     });
     done();
 });
