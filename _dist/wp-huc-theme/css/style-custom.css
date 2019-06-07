@@ -280,20 +280,28 @@ strong {
     flex-direction: row; } }
 
 .partners {
-  max-width: 700px;
+  max-width: 850px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #d8bfe9;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 2rem; }
 
 .partners img {
-  width: 100px;
-  height: auto;
-  margin: 0 1rem 1rem 0; }
+  width: 125px;
+  height: auto; }
 
 .partnerItem {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  min-height: 125px;
+  margin: 0 .5rem .5rem 0;
+  padding: 1rem;
+  background-color: #fff; }
+
+.bgLightGrey {
+  background-color: #f0f0f0; }

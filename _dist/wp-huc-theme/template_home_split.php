@@ -12,7 +12,7 @@ if ( have_posts() ) :
 	<div class="splitScreenLeft" style="background-image: url(<?php the_post_thumbnail_url('full') ?>)"> </div>
 	<div class="splitScreenRight customBackground">
 		<div class="splitScreenContent hcBasicSideMargin">
-			<h1><?php echo htmlspecialchars(get_bloginfo( 'description' )); ?></h1><br>
+			<h1><?php echo get_bloginfo( 'description' )); ?></h1><br>
 					<p><?php the_content(); ?></p>
 		</div>
 	</div>

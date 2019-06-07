@@ -1,25 +1,28 @@
-<div class="partners">
-  <?php
-  wp_reset_postdata();
+<div class="bgLightGrey">
 
-  $args = array(
-      'post_type' => 'partners',
-      'order'     => 'ASC'
-  );
-  query_posts( $args );
+    <?php
+    wp_reset_postdata();
 
-  if ( have_posts() ) :
-    while ( have_posts() ) : the_post();
-    if ( has_post_thumbnail() ) {?>
-      <div class="partnerItem">
-        <a href="<?php echo get_post_meta($post->ID, 'partner_url', true); ?>">
-          <img src="<?php the_post_thumbnail_url('thumb') ?>)">
-        </a>
-      </div>
+    $args = array(
+        'post_type' => 'partners',
+        'order'     => 'ASC'
+    );
+    query_posts( $args );
+
+    if ( have_posts() ) :
+      echo '<h2>Partners</h2><div class="partners">';
+      while ( have_posts() ) : the_post();
+      if ( has_post_thumbnail() ) {?>
+        <div class="partnerItem">
+          <a href="<?php echo get_post_meta($post->ID, 'partner_url', true); ?>">
+            <img src="<?php the_post_thumbnail_url('medium') ?>)">
+          </a>
+        </div>
 
 
-    <?php }
-    endwhile;
-  endif;
-  ?>
+      <?php }
+      endwhile;
+    endif;
+    ?>
+  </div>
 </div>
